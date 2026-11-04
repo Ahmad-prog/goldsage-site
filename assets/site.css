@@ -852,3 +852,6 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
   50% { transform: scale(1.18) rotate(-3deg); }
   100% { transform: none; }
 }
+
+/* average win / loss tile: each amount stays whole when the pair wraps */
+.tile b.winloss span { white-space: nowrap; }
