@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>GoldSage</title>
-<meta name="description" content="SageGrid, the GoldSage gold robot for MetaTrader 5, in three versions: Disciplined, Balanced and Aggressive. A real trade replayed, one-year MT5 backtests and six months of live results.">
+<title>GoldSage | Gold Trading Bot for MetaTrader 5 (XAUUSD EA)</title>
+<meta name="description" content="SageGrid by GoldSage is a gold trading bot for MetaTrader 5: a trend-following XAUUSD grid EA with a hard stop on every grid and an account kill switch, in Disciplined, Balanced and Aggressive versions. One-year MT5 backtests on real ticks.">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://goldsagefx.com/">
+<meta property="og:url" content="https://goldsagefx.com/">
 <meta name="theme-color" content="#04050B">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Cdefs%3E%3ClinearGradient id=%22gold%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%23FFE9A8%22/%3E%3Cstop offset=%22.45%22 stop-color=%22%23FFC83D%22/%3E%3Cstop offset=%221%22 stop-color=%22%23FF8A3D%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22100%22 height=%22100%22 rx=%2227%22 fill=%22url%28%23gold%29%22/%3E%3Cpath d=%22M30 76H61Q70 76 70 67V63Q70 54 61 54H39Q30 54 30 45V41Q30 32 39 32H55L71 16%22 fill=%22none%22 stroke=%22%23140B00%22 stroke-width=%2211%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E%3Cpath d=%22M60 15H72V27%22 fill=%22none%22 stroke=%22%23140B00%22 stroke-width=%2211%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="assets/touch-icon.png">
@@ -21,6 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&family=Unbounded:wght@500..800&display=swap">
 <link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://goldsagefx.com/#org", "name": "GoldSage", "alternateName": ["Gold Sage", "GoldSage FX"], "url": "https://goldsagefx.com/", "logo": "https://goldsagefx.com/assets/logo.png", "contactPoint": {"@type": "ContactPoint", "telephone": "+27-63-276-2725", "contactType": "sales"}}, {"@type": "WebSite", "@id": "https://goldsagefx.com/#website", "url": "https://goldsagefx.com/", "name": "GoldSage", "publisher": {"@id": "https://goldsagefx.com/#org"}}, {"@type": "SoftwareApplication", "name": "SageGrid", "alternateName": "SageGrid gold grid bot", "applicationCategory": "FinanceApplication", "operatingSystem": "Windows (MetaTrader 5)", "description": "A gold (XAUUSD) grid trading bot, an expert advisor for MetaTrader 5, in three risk levels: Disciplined (+372% in a one-year MT5 backtest, worst fall 27.4%), Balanced (+947% in a one-year MT5 backtest, worst fall 32.2%), Aggressive (+2,181% in a one-year MT5 backtest, worst fall 45.0%).", "publisher": {"@id": "https://goldsagefx.com/#org"}, "url": "https://goldsagefx.com/"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is GoldSage?", "acceptedAnswer": {"@type": "Answer", "text": "GoldSage is the team behind SageGrid, a gold grid trading bot for MetaTrader 5. We test every version in the MT5 Strategy Tester on real ticks and share it with a small circle of traders through WhatsApp."}}, {"@type": "Question", "name": "What is SageGrid?", "acceptedAnswer": {"@type": "Answer", "text": "A gold trading bot: an expert advisor (EA) for MetaTrader 5 that trades gold, XAUUSD. It opens small grids in the direction of the daily trend and closes each one as a whole, at a target or at a hard stop. It comes in three versions: Disciplined, Balanced and Aggressive."}}, {"@type": "Question", "name": "Which bot should I pick?", "acceptedAnswer": {"@type": "Answer", "text": "Disciplined if you want the smallest falls: its worst in the one-year test was 27.4%. Aggressive if you can sit through a fall of 45.0% for the biggest gains. Balanced sits between them, with a worst fall of 32.2%. Message us on WhatsApp and we’ll help you choose."}}, {"@type": "Question", "name": "Do I need to watch it?", "acceptedAnswer": {"@type": "Answer", "text": "No. It needs MetaTrader 5 running day and night, usually on a VPS, so its stops are always watched. Nobody has to step in."}}, {"@type": "Question", "name": "How risky is it?", "acceptedAnswer": {"@type": "Answer", "text": "In the one-year test the worst falls, floating P&L included, were 27.4% for Disciplined, 32.2% for Balanced and 45.0% for Aggressive. The biggest floating loss on a single grid was 12.3% of the balance for Disciplined, 10.7% of the balance for Balanced and 15.2% of the balance for Aggressive. Every grid has a hard stop, every day a loss limit, and every account a kill switch. Trading gold can lose money, and future results can be worse than the test."}}, {"@type": "Question", "name": "How realistic are the backtests?", "acceptedAnswer": {"@type": "Answer", "text": "They ran in the MetaTrader 5 Strategy Tester on 87,821,455 real ticks from STARTRADER, with the broker’s real spread and a 150 ms delay on every order. With a slower 500 ms delay the three bots ended the year at $3,731, $10,863 and $20,222."}}, {"@type": "Question", "name": "Which broker and account does it need?", "acceptedAnswer": {"@type": "Answer", "text": "It was built and tested on STARTRADER’s gold symbol, XAUUSD.c. Its lot sizes are set for cent accounts, like the live account we trade."}}, {"@type": "Question", "name": "Can I see live results?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Message us on WhatsApp and we’ll open the live account in MetaTrader 5 on a screen share, so you can see the six months on this site trade by trade."}}, {"@type": "Question", "name": "How do I get access?", "acceptedAnswer": {"@type": "Answer", "text": "Send a WhatsApp message to +27 63 276 2725. We’ll answer your questions there."}}]}]}</script>
 
 </head>
 <body>
@@ -59,7 +62,7 @@
       <a class="status rise" href="#live" style="--d:0"><i></i>Live account <b>+127%</b> in six months
         <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <h1 id="hero-title" class="rise" style="--d:1">Gold trading that <span class="grad">runs itself.</span></h1>
-      <p class="lead rise" style="--d:2">SageGrid is a MetaTrader&nbsp;5 robot for gold with a fixed exit on every trade, in three risk levels. In a one-year test on real ticks, $1,000 grew to $4,724, $10,470 or $22,815.</p>
+      <p class="lead rise" style="--d:2">SageGrid is a gold trading bot for MetaTrader&nbsp;5: a grid EA for XAUUSD with a fixed exit on every trade, in three risk levels. In a one-year test on real ticks, $1,000 grew to $4,724, $10,470 or $22,815.</p>
       <div class="actions rise" style="--d:3">
         <a class="btn" href="https://wa.me/27632762725?text=Hi%20GoldSage%2C%20I%27d%20like%20access%20to%20SageGrid">
           Get access on WhatsApp
@@ -359,8 +362,12 @@
       </div>
       <div class="faq reveal">
         <details>
+          <summary>What is GoldSage?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M3 9h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <div><p>GoldSage is the team behind SageGrid, a gold grid trading bot for MetaTrader&nbsp;5. We test every version in the MT5 Strategy Tester on real ticks and share it with a small circle of traders through WhatsApp.</p></div>
+        </details>
+        <details>
           <summary>What is SageGrid?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M3 9h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
-          <div><p>A robot (expert advisor) for MetaTrader&nbsp;5 that trades gold, XAUUSD. It opens small grids in the direction of the daily trend and closes each one as a whole, at a target or at a hard stop. It comes in three versions: Disciplined, Balanced and Aggressive.</p></div>
+          <div><p>A gold trading bot: an expert advisor (EA) for MetaTrader&nbsp;5 that trades gold, XAUUSD. It opens small grids in the direction of the daily trend and closes each one as a whole, at a target or at a hard stop. It comes in three versions: Disciplined, Balanced and Aggressive.</p></div>
         </details>
         <details>
           <summary>Which bot should I pick?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M3 9h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>

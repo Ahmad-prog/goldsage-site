@@ -1,0 +1,25 @@
+# GoldSage
+
+> GoldSage makes SageGrid, a gold (XAUUSD) trading bot: a grid expert advisor (EA) for MetaTrader 5 in three risk levels, Disciplined, Balanced and Aggressive. Contact and access through WhatsApp: +27 63 276 2725.
+
+## What SageGrid does
+- Trades gold only in the direction of the daily trend; when the trend is unclear, it waits.
+- If price moves against it, it can add up to two more positions, so the whole grid can close in profit on a smaller recovery.
+- Closes every position together: at the target, on a trailing exit, or at a hard stop on each grid.
+- Account protection: daily loss limits, half size after a dip, and a kill switch that closes everything and stops.
+
+## Results (MetaTrader 5 Strategy Tester, real ticks, 31 Oct 2025 to 30 Oct 2026, from $1,000)
+- SageGrid Disciplined: +372% in one year (to $4,724), worst fall 27.4% with floating P&L, kill switch 35% (never hit), last six months +145%.
+- SageGrid Balanced: +947% in one year (to $10,470), worst fall 32.2% with floating P&L, kill switch 45% (never hit), last six months +161%.
+- SageGrid Aggressive: +2,181% in one year (to $22,815), worst fall 45.0% with floating P&L, kill switch 50% (never hit), last six months +298%.
+- Live account (our first-generation system, 1 May to 30 Oct 2026): +127% with deposits and withdrawals taken out.
+- Past results do not guarantee future returns; trading gold can lose money.
+
+## Pages
+- [Home](https://goldsagefx.com/): the bots, a real trade replayed, risk limits and FAQ
+- [Backtests](https://goldsagefx.com/backtest/): the three bots compared
+- [SageGrid Disciplined](https://goldsagefx.com/backtest/disciplined/): full one-year results
+- [SageGrid Balanced](https://goldsagefx.com/backtest/balanced/): full one-year results
+- [SageGrid Aggressive](https://goldsagefx.com/backtest/aggressive/): full one-year results
+- [Live account](https://goldsagefx.com/live/): the six-month statement
+- [How it works](https://goldsagefx.com/how/): the rules and limits
