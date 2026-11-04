@@ -400,7 +400,6 @@
     const chart = panel.querySelector('.chart[data-chart="equity"]');
     const f = Object.fromEntries([...panel.querySelectorAll("[data-f]")].map((n) => [n.dataset.f, n]));
     const WA = "https://wa.me/27632762725?text=";
-    const share = (s) => (s.match(/\(([^)]+)\)/) || [, s])[1];
 
     function select(tab, focus) {
       const key = tab.dataset.bot, b = TS.bots[key];
@@ -423,10 +422,10 @@
       f.ksl.style.left = `${ks}%`;
       f.ks.textContent = `Closed trades only ${pct(b.bal_dd_pct, 1)} · kill switch ${nf(ks)}%, ${b.cap_hit ? "hit" : "never hit"}`;
       f.fl.textContent = pct(-b.float_pct, 1);
-      f.flt.textContent = `Of the balance, on one grid (${money(b.float_usd, 2)}). Stop on each grid: ${nf(b.inputs.InpBasketStopPct)}%`;
-      f.aww.textContent = money(b.avg_win);
-      f.awl.textContent = money(b.avg_loss);
-      f.awt.textContent = `Per trade · ${share(b.won)} of trades won · profit factor ${nf(b.profit_factor, 2)}`;
+      f.bw.textContent = spct(b.best_grid_pct, 1);
+      f.flt.innerHTML = `Of the balance, on one grid (<span class="nw">${smoney(b.best_grid_usd, 2)}</span> and <span class="nw">${money(b.float_usd, 2)}</span>). Stop on each grid: ${nf(b.inputs.InpBasketStopPct)}%`;
+      f.gw.textContent = pct(b.grid_win_pct, 1);
+      f.gwt.textContent = `Accuracy: ${nf(b.grids_won)} of ${nf(b.grids)} grids · profit factor ${nf(b.profit_factor, 2)}`;
       f.wm.textContent = `${b.win_months} of ${b.months_n}`;
       f.wmt.textContent = `In the 1-year test. Worst month ${pct(b.worst_month_pct, 1)}`;
       f.avgm.textContent = spct(b.avg_win_month_pct, 1);

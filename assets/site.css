@@ -855,3 +855,4 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
 
 /* average win / loss tile: each amount stays whole when the pair wraps */
 .tile b.winloss span { white-space: nowrap; }
+.nw { white-space: nowrap; }
