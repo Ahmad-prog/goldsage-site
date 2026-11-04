@@ -829,30 +829,26 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
   .stamp { position: relative; right: auto; top: auto; margin: -24px 0 22px auto; zoom: 0.78; }
 }
 
-/* ---------------------------------------------------------------- the bots' animals in the Bot Lab tabs: owl, wolf, roaring lion */
+/* ---------------------------------------------------------------- cartoon animals: on the right of each Bot Lab tab (owl, wolf, roaring lion)
+   The tab's own layout (risk bars, name, return) is unchanged; the animal only fills the empty space on the right. */
 
 .lab-tab { grid-template-columns: auto 1fr auto; }
-.lab-tab .animal { grid-row: 1 / span 2; width: 46px; height: 46px; color: var(--ink-dim); transition: color var(--t-hover) ease, filter 300ms ease; }
-.lab-tab .lvl { grid-column: 3; grid-row: 1 / span 2; }
-.lab-tab[aria-selected="true"] .animal { color: var(--acc); filter: drop-shadow(0 0 10px color-mix(in srgb, var(--acc) 65%, transparent)); }
-@media (hover: hover) and (pointer: fine) { .lab-tab[aria-selected="false"]:hover .animal { color: var(--ink-soft); } }
-@media (max-width: 640px) {
-  .lab-tab { grid-template-columns: auto 1fr; }
-  .lab-tab .animal { grid-row: 1; width: 34px; height: 34px; }
-  .lab-tab .lvl { grid-column: 2; grid-row: 1; justify-self: end; align-self: start; }
+.lab-tab .animal { grid-column: 3; grid-row: 1 / span 2; width: 56px; height: 56px; margin: -8px -6px -8px 0; transform-origin: 50% 80%; }
+@media (max-width: 640px) {      /* phones: the animal shares the top row with the risk bars, above the name */
+  .lab-tab { grid-template-columns: 1fr auto; }
+  .lab-tab .lvl { grid-column: 1; grid-row: 1; align-self: center; }
+  .lab-tab .animal { grid-column: 2; grid-row: 1; width: 32px; height: 32px; margin: -6px -4px -4px 0; }
   .lab-tab-name, .lab-tab-ret { grid-column: 1 / -1; }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .lab-tab[aria-selected="true"] .animal { animation: animal-pop 520ms var(--ease-out); transform-origin: 50% 60%; }
+  .lab-tab[aria-selected="true"] .animal { animation: animal-hop 560ms var(--ease-out); }
   .lab-tab[aria-selected="true"] .animal--aggressive { animation: lion-roar 900ms var(--ease-out); }
-  .lab-tab[aria-selected="true"] .animal--aggressive .roar-mouth { animation: roar-mouth 900ms ease-out; }
 }
-@keyframes animal-pop { 0% { transform: scale(1); } 40% { transform: scale(1.14); } 100% { transform: scale(1); } }
+@keyframes animal-hop { 0% { transform: translateY(0) scale(1); } 35% { transform: translateY(-6px) scale(1.08); } 70% { transform: translateY(1px) scale(0.98); } 100% { transform: none; } }
 @keyframes lion-roar {
   0% { transform: scale(1) rotate(0); }
-  18% { transform: scale(1.22) rotate(-6deg); }
-  34% { transform: scale(1.18) rotate(5deg); }
-  50% { transform: scale(1.2) rotate(-3deg); }
-  100% { transform: scale(1) rotate(0); }
+  18% { transform: scale(1.2) rotate(-7deg); }
+  34% { transform: scale(1.16) rotate(6deg); }
+  50% { transform: scale(1.18) rotate(-3deg); }
+  100% { transform: none; }
 }
-@keyframes roar-mouth { 0%, 100% { fill-opacity: 0.28; } 25%, 55% { fill-opacity: 0.85; } }
