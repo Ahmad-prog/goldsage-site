@@ -264,7 +264,7 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
 
 /* ---------------------------------------------------------------- hero */
 
-.hero { padding-top: clamp(64px, 9vw, 128px); padding-bottom: clamp(40px, 5vw, 72px); text-align: center; position: relative; }
+.hero { padding-top: clamp(44px, 5.5vw, 80px); padding-bottom: clamp(40px, 5vw, 72px); text-align: center; position: relative; }
 .hero h1 { max-width: 14.5ch; margin-inline: auto; }
 .hero .lead { margin: 26px auto 0; }
 .hero .actions { justify-content: center; margin-top: 36px; }
@@ -285,7 +285,7 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
 @media (prefers-reduced-motion: no-preference) { .status i { animation: ping 2.2s ease-out infinite; } }
 @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.55); } 80%, 100% { box-shadow: 0 0 0 10px rgba(45, 212, 191, 0); } }
 
-.stage { position: relative; max-width: 1100px; margin: clamp(56px, 7vw, 96px) auto 0; text-align: left; perspective: 1800px; }
+.stage { position: relative; max-width: 1100px; margin: clamp(40px, 4.5vw, 64px) auto 0; text-align: left; perspective: 1800px; }
 .stage::before { /* light pooled under the terminal */
   content: ""; position: absolute; left: 8%; right: 8%; top: 14%; bottom: -8%; z-index: -1;
   background: radial-gradient(closest-side, rgba(255, 176, 46, 0.24), transparent);
@@ -833,15 +833,16 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
 
 .hero-wrap { isolation: isolate; }
 .hero-lion {
-  /* site.js sizes it to the text block: from the "Live account" pill down to the terminal's top bar */
+  /* site.js sizes it to the text block: from the "Live account" pill down to the WhatsApp number */
   position: absolute; z-index: -1; left: 50%; top: 0;
-  height: 700px; width: auto; aspect-ratio: 424 / 452;
+  height: 520px; width: auto;
   transform: translateX(-50%);
-  opacity: 0.55;
+  opacity: 0.62;
   pointer-events: none;
   filter: drop-shadow(0 0 6px rgba(255, 176, 46, 0.45));
-  -webkit-mask-image: radial-gradient(closest-side, #000 86%, transparent 100%);
-  mask-image: radial-gradient(closest-side, #000 86%, transparent 100%);
+  /* fade only the corners: the mane's top and bottom tips stay visible at the edges of the text block */
+  -webkit-mask-image: radial-gradient(farthest-side, #000 74%, transparent 100%);
+  mask-image: radial-gradient(farthest-side, #000 74%, transparent 100%);
 }
 /* a soft dark halo keeps the text crisp over the gold lines */
 .hero h1, .hero .lead, .hero .phone { text-shadow: 0 2px 18px rgba(4, 5, 11, 0.95), 0 0 42px rgba(4, 5, 11, 0.8); }
