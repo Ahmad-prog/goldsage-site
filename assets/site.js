@@ -400,7 +400,6 @@
     const chart = panel.querySelector('.chart[data-chart="equity"]');
     const f = Object.fromEntries([...panel.querySelectorAll("[data-f]")].map((n) => [n.dataset.f, n]));
     const WA = "https://wa.me/27632762725?text=";
-    const share = (s) => (s.match(/\(([^)]+)\)/) || [, s])[1];
 
     function select(tab, focus) {
       const key = tab.dataset.bot, b = TS.bots[key];
@@ -424,9 +423,10 @@
       f.fl.textContent = pct(-b.float_pct, 1);
       f.flt.textContent = `Of the balance, on one grid (${money(b.float_usd, 2)}). Stop on each grid: ${nf(b.inputs.InpBasketStopPct)}%`;
       f.pf.textContent = nf(b.profit_factor, 2);
-      f.trades.textContent = nf(b.trades);
-      f.won.textContent = `${share(b.won)} won`;
-      f.avgm.textContent = spct(b.avg_month_pct, 1);
+      f.wm.textContent = `${b.win_months} of ${b.months_n}`;
+      f.wmt.textContent = `In the 1-year test. Worst month ${pct(b.worst_month_pct, 1)}`;
+      f.avgm.textContent = spct(b.avg_win_month_pct, 1);
+      f.avgmt.textContent = `Average gain of the ${b.win_months} months that made money in the 1-year test`;
       f.waname.textContent = `Ask about ${b.name}`;
       f.wa.href = WA + encodeURIComponent(`Hi GoldSage, I'd like to ask about SageGrid ${b.name}`);
       f.page.href = b.page;
