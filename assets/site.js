@@ -415,7 +415,8 @@
       f.ret.textContent = spct(b.ret_pct, 0);
       f.sub.textContent = `${money(b.deposit)} became ${money(b.end_balance, 2)} in the MT5 Strategy Tester`;
       f.blurb.textContent = b.blurb;
-      f.six.textContent = spct(b.six.ret_pct, 0);
+      f.avgl.textContent = spct(b.avg_loss_month_pct, 1);
+      f.avglt.textContent = `Average loss of the ${b.loss_months} months that lost money in the 1-year test`;
       f.dd.textContent = pct(b.eq_dd_pct, 1);
       f.ddw.style.width = `${b.eq_dd_pct}%`;
       f.ksl.style.left = `${ks}%`;
