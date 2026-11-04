@@ -426,9 +426,9 @@
       f.pf.textContent = nf(b.profit_factor, 2);
       f.trades.textContent = nf(b.trades);
       f.won.textContent = `${share(b.won)} won`;
-      f.d500.textContent = b.d500 ? spct(b.d500.ret_pct, 0) : "";
+      f.avgm.textContent = spct(b.avg_month_pct, 1);
       f.waname.textContent = `Ask about ${b.name}`;
-      f.wa.href = WA + encodeURIComponent(`Hi TradeSage, I'd like to ask about SageGrid ${b.name}`);
+      f.wa.href = WA + encodeURIComponent(`Hi GoldSage, I'd like to ask about SageGrid ${b.name}`);
       f.page.href = b.page;
       f.report.href = b.report;
 
