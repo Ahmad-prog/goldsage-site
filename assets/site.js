@@ -493,9 +493,29 @@
     document.addEventListener("click", (e) => { if (!bar.contains(e.target)) set(false); });
   }
 
+  /* ------------------------------------------------------------ hero lion: exactly as tall as the text block it sits behind */
+  function heroLion() {
+    const lion = document.querySelector(".hero-lion");
+    if (!lion) return;
+    const wrap = lion.parentElement, start = wrap.querySelector(".status"), stage = wrap.querySelector(".stage"), bar = wrap.querySelector(".term-top");
+    if (!start || !stage || !bar) return;
+    // layout positions (offsetTop), not on-screen boxes: the terminal tilts as it scrolls in, which must not move the lion
+    const fit = () => {
+      // the terminal starts tilted, which shows its top bar a little lower: reach whichever is lower
+      const shown = bar.getBoundingClientRect().bottom - wrap.getBoundingClientRect().top;
+      const top = start.offsetTop, bottom = Math.max(stage.offsetTop + bar.offsetHeight, shown);
+      lion.style.top = `${top}px`;
+      lion.style.height = `${Math.max(200, bottom - top)}px`;
+    };
+    fit();
+    setTimeout(fit, 1900);          // again once the hero's entrance animation has settled
+    new ResizeObserver(fit).observe(wrap);
+  }
+
   menu();
   reveals();
   spotlight();
+  heroLion();
   const boot = () => {
     if (!TS) return;
     document.querySelectorAll('.chart[data-chart="equity"]').forEach(equityChart);
