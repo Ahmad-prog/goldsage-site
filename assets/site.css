@@ -264,7 +264,7 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
 
 /* ---------------------------------------------------------------- hero */
 
-.hero { padding-top: 20px; padding-bottom: clamp(40px, 5vw, 72px); text-align: center; position: relative; }
+.hero { padding-top: clamp(64px, 9vw, 128px); padding-bottom: clamp(40px, 5vw, 72px); text-align: center; position: relative; }
 .hero h1 { max-width: 14.5ch; margin-inline: auto; }
 .hero .lead { margin: 26px auto 0; }
 .hero .actions { justify-content: center; margin-top: 36px; }
@@ -285,7 +285,7 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
 @media (prefers-reduced-motion: no-preference) { .status i { animation: ping 2.2s ease-out infinite; } }
 @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.55); } 80%, 100% { box-shadow: 0 0 0 10px rgba(45, 212, 191, 0); } }
 
-.stage { position: relative; max-width: 1100px; margin: clamp(40px, 4.5vw, 64px) auto 0; text-align: left; perspective: 1800px; }
+.stage { position: relative; max-width: 1100px; margin: clamp(56px, 7vw, 96px) auto 0; text-align: left; perspective: 1800px; }
 .stage::before { /* light pooled under the terminal */
   content: ""; position: absolute; left: 8%; right: 8%; top: 14%; bottom: -8%; z-index: -1;
   background: radial-gradient(closest-side, rgba(255, 176, 46, 0.24), transparent);
@@ -794,7 +794,7 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
 .hero-wrap { position: relative; }
 .stamp {
   --ink-red: #FF4733;
-  position: absolute; right: var(--gutter); top: 0; z-index: 2;
+  position: absolute; right: var(--gutter); top: -28px; z-index: 2;
   width: max-content; padding: 13px 14px 12px;
   display: grid; justify-items: center; gap: 3px; text-align: center;
   color: var(--ink-red);
@@ -826,37 +826,5 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
 /* narrower screens: a smaller stamp; below 960px the headline needs the width, so it sits above it, right-aligned */
 @media (max-width: 1199px) { .stamp { zoom: 0.84; } }
 @media (max-width: 959px) {
-  /* phones: the stamp goes under the WhatsApp number, so nothing sits between the menu and the headline */
-  .hero-wrap { display: flex; flex-direction: column; align-items: center; }
-  .hero-wrap > .stamp { order: 1; position: relative; right: auto; top: auto; margin: 26px auto 0; zoom: 0.78; }
-  .hero-wrap > .stage { order: 2; align-self: stretch; }
+  .stamp { position: relative; right: auto; top: auto; margin: -24px 0 22px auto; zoom: 0.78; }
 }
-
-/* ---------------------------------------------------------------- the gold lion behind the hero text */
-
-.hero-wrap { isolation: isolate; }
-.hero-lion {
-  /* site.js sizes it to the text block: from the "Live account" pill down to the WhatsApp number */
-  position: absolute; z-index: -1; left: 50%; top: 0;
-  height: 520px; width: auto;
-  transform: translateX(-50%);
-  opacity: 0.62;
-  pointer-events: none;
-  filter: drop-shadow(0 0 6px rgba(255, 176, 46, 0.45));
-  /* fade only the corners: the mane's top and bottom tips stay visible at the edges of the text block */
-  -webkit-mask-image: radial-gradient(farthest-side, #000 74%, transparent 100%);
-  mask-image: radial-gradient(farthest-side, #000 74%, transparent 100%);
-}
-/* a soft dark halo keeps the text crisp over the gold lines */
-.hero h1, .hero .lead, .hero .phone { text-shadow: 0 2px 18px rgba(4, 5, 11, 0.95), 0 0 42px rgba(4, 5, 11, 0.8); }
-.hero h1 .grad { text-shadow: none; }                         /* gradient text cannot carry a shadow */
-.hero-lion path { stroke-dasharray: 1; stroke-dashoffset: 0; }
-@media (max-width: 720px) { .hero-lion { opacity: 0.45; } }
-
-/* the lion traces itself in gold: the face first, then the mane flares out */
-@media (prefers-reduced-motion: no-preference) {
-  .js .hero-lion path { stroke-dashoffset: 1; animation: trace 1400ms cubic-bezier(0.45, 0, 0.2, 1) forwards; animation-delay: calc(var(--i) * 13ms + 250ms); }
-  .js .hero-lion g { animation: lion-breathe 7s ease-in-out 3.6s infinite; transform-origin: 50% 50%; }
-}
-@keyframes trace { to { stroke-dashoffset: 0; } }
-@keyframes lion-breathe { 0%, 100% { opacity: 1; } 50% { opacity: 0.72; } }

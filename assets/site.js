@@ -493,26 +493,9 @@
     document.addEventListener("click", (e) => { if (!bar.contains(e.target)) set(false); });
   }
 
-  /* ------------------------------------------------------------ hero lion: exactly as tall as the text block it sits behind */
-  function heroLion() {
-    const lion = document.querySelector(".hero-lion");
-    if (!lion) return;
-    const wrap = lion.parentElement, start = wrap.querySelector(".status"), end = wrap.querySelector(".phone");
-    if (!start || !end) return;
-    // layout positions (offsetTop), so entrance animations and the tilting terminal never move it
-    const fit = () => {
-      const top = start.offsetTop, bottom = end.offsetTop + end.offsetHeight;
-      lion.style.top = `${top}px`;
-      lion.style.height = `${Math.max(200, bottom - top)}px`;
-    };
-    fit();
-    new ResizeObserver(fit).observe(wrap);
-  }
-
   menu();
   reveals();
   spotlight();
-  heroLion();
   const boot = () => {
     if (!TS) return;
     document.querySelectorAll('.chart[data-chart="equity"]').forEach(equityChart);
