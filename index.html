@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>TradeSage</title>
+<meta name="description" content="SageGrid, the TradeSage gold robot for MetaTrader 5, in three versions: Disciplined, Balanced and Aggressive. A real trade replayed, one-year MT5 backtests and six months of live results.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#04050B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23FFE7A1'/%3E%3Cstop offset='.4' stop-color='%23FFC83D'/%3E%3Cstop offset='1' stop-color='%23FF8A3D'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M8 11h16M8 16h11M8 21h6' stroke='%23120A00' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&family=Unbounded:wght@500..800&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="fx" aria-hidden="true"><div class="fx-aurora"><i></i><i></i><i></i></div><div class="fx-grid"></div></div>
+<header class="site-head">
+  <div class="bar">
+    <a class="wordmark" href="./" aria-label="TradeSage home">
+      <span class="mark"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 5h12M3 9h8M3 13h4" stroke="#120A00" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+      TradeSage
+    </a>
+    <nav class="nav" id="nav" aria-label="Pages">
+      <a href="#bots">Bots</a>
+      <a href="backtest/" >Backtests</a>
+      <a href="live/" >Live account</a>
+      <a href="how/" >How it works</a>
+    </nav>
+    <a class="btn btn--small" href="https://wa.me/27632762725?text=Hi%20TradeSage%2C%20I%27d%20like%20access%20to%20SageGrid">Get access</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================ hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-wrap">
+      <div class="stamp" role="img" aria-label="Tested: on a live account for 6 months, and on one year of real ticks in which gold fell 31% from its record $5,597.67 on 29 Jan 2026, its biggest crash in more than ten years.">
+        <span class="stamp-top" aria-hidden="true">&#9733; TradeSage &#9733;</span>
+        <b class="stamp-big" aria-hidden="true">Tested</b>
+        <span class="stamp-rule" aria-hidden="true"></span>
+        <span class="stamp-line" aria-hidden="true">Live account &middot; 6 mo</span>
+        <span class="stamp-line" aria-hidden="true">Real ticks &middot; 1 year</span>
+        <span class="stamp-foot" aria-hidden="true">In gold&rsquo;s biggest crash<br>in 10+ years (−31%)</span>
+      </div>
+      <a class="status rise" href="#live" style="--d:0"><i></i>Live account <b>+127%</b> in six months
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <h1 id="hero-title" class="rise" style="--d:1">Gold trading that <span class="grad">runs itself.</span></h1>
+      <p class="lead rise" style="--d:2">SageGrid is a MetaTrader&nbsp;5 robot for gold with a fixed exit on every trade, in three risk levels. In a one-year test on real ticks, $1,000 grew to $4,724, $10,470 or $22,815.</p>
+      <div class="actions rise" style="--d:3">
+        <a class="btn" href="https://wa.me/27632762725?text=Hi%20TradeSage%2C%20I%27d%20like%20access%20to%20SageGrid">
+          Get access on WhatsApp
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#bots">Explore the bots</a>
+      </div>
+      <p class="phone rise" style="--d:4">WHATSAPP +27 63 276 2725</p>
+
+      <div class="stage rise" style="--d:5">
+        <div class="holo glow-border">
+          <div class="terminal" id="terminal">
+            <div class="term-top">
+              <span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="term-sym">XAUUSD.c &middot; M5</span>
+              <span class="term-meta">A real SageGrid Balanced trade from the MT5 test</span>
+              <span class="pill" data-state="idle" aria-live="polite"><i></i><span class="pill-text">Waiting for a signal</span></span>
+              <button class="replay-btn" type="button" aria-controls="terminal">
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8a5.5 5.5 0 1 0 1.6-3.9M2.5 2.5v2.8h2.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Replay
+              </button>
+            </div>
+            <div class="chart term-chart" data-chart="replay" aria-label="Replay of a SageGrid Balanced buy grid on gold: three buys as the price fell, all closed together at the target for +$109.81."></div>
+            <div class="term-foot" aria-hidden="true">
+              <div><span>Positions</span><b data-r="pos">0</b></div>
+              <div><span>On the balance</span><b data-r="ret">—</b></div>
+              <div><span>Result</span><b data-r="pnl">—</b></div>
+              <div><span>Time in trade</span><b data-r="time">0h 00m</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="floats">
+          <div class="float f1">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 2.5 4 5v4.6c0 3.6 2.5 6.6 6 7.9 3.5-1.3 6-4.3 6-7.9V5l-6-2.5Z" fill="none" stroke="var(--gain)" stroke-width="1.6" stroke-linejoin="round"/><path d="m7.2 10 2 2 3.8-4" fill="none" stroke="var(--gain)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div><b>Never hit</b><span>Kill switch, all three bots</span></div>
+          </div>
+          <div class="float f2">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 15l4.5-5 3 3L17 6" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.5 6H17v4.5" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div><b class="grad">+127%</b><span>Live account, 6 months</span></div>
+          </div>
+        </div>
+        <p class="small term-caption">Real 5-minute gold candles and the deals of one grid from the MT5 test: three buys, closed together at the target for +$109.81 on a $5,919 account.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ ticker -->
+  <div class="ticker" role="region" aria-label="Results at a glance">
+    <div class="ticker-track">
+      <ul>
+        <li><span>Disciplined &middot; 1 year</span><b style="color:var(--acc-disciplined)">+372%</b></li><li><span>Balanced &middot; 1 year</span><b style="color:var(--acc-balanced)">+947%</b></li><li><span>Aggressive &middot; 1 year</span><b style="color:var(--acc-aggressive)">+2,181%</b></li>
+        <li><span>Live account &middot; 6 months</span><b class="grad">+127%</b></li>
+        <li><span>Real ticks tested</span><b>87,821,455</b></li>
+        <li><span>Margin stop-outs</span><b>0</b></li>
+        <li><span>Kill switch</span><b class="pos">Never hit</b></li>
+      </ul>
+      <ul aria-hidden="true">
+        <li><span>Disciplined &middot; 1 year</span><b style="color:var(--acc-disciplined)">+372%</b></li><li><span>Balanced &middot; 1 year</span><b style="color:var(--acc-balanced)">+947%</b></li><li><span>Aggressive &middot; 1 year</span><b style="color:var(--acc-aggressive)">+2,181%</b></li>
+        <li><span>Live account &middot; 6 months</span><b class="grad">+127%</b></li>
+        <li><span>Real ticks tested</span><b>87,821,455</b></li>
+        <li><span>Margin stop-outs</span><b>0</b></li>
+        <li><span>Kill switch</span><b class="pos">Never hit</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============================================================ bot lab -->
+  <section class="section" id="bots" aria-labelledby="bots-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">01 &mdash; The bots</span>
+        <h2 id="bots-title">Three bots. <span class="grad">Pick your pace.</span></h2>
+        <p>Same strategy, three levels of risk. Switch between them: every number comes from the MT5 Strategy Tester, starting with $1,000.</p>
+      </div>
+
+      <div class="lab reveal" data-lab>
+        <div class="lab-tabs" role="tablist" aria-label="Bots">
+          
+          <button class="lab-tab" type="button" role="tab" id="lab-tab-disciplined" aria-controls="lab-panel" data-bot="disciplined"
+                  aria-selected="false" tabindex="-1" style="--acc:var(--acc-disciplined)">
+            <span class="lvl" data-level="1" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="lab-tab-name">Disciplined</span>
+            <span class="lab-tab-ret">+372%<span class="hide-sm"> in 1 year</span></span>
+          </button>
+          
+          <button class="lab-tab" type="button" role="tab" id="lab-tab-balanced" aria-controls="lab-panel" data-bot="balanced"
+                  aria-selected="true" tabindex="0" style="--acc:var(--acc-balanced)">
+            <span class="lvl" data-level="2" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="lab-tab-name">Balanced</span>
+            <span class="lab-tab-ret">+947%<span class="hide-sm"> in 1 year</span></span>
+          </button>
+          
+          <button class="lab-tab" type="button" role="tab" id="lab-tab-aggressive" aria-controls="lab-panel" data-bot="aggressive"
+                  aria-selected="false" tabindex="-1" style="--acc:var(--acc-aggressive)">
+            <span class="lvl" data-level="3" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="lab-tab-name">Aggressive</span>
+            <span class="lab-tab-ret">+2,181%<span class="hide-sm"> in 1 year</span></span>
+          </button>
+          
+        </div>
+
+        <div class="lab-panel glass" id="lab-panel" role="tabpanel" aria-labelledby="lab-tab-balanced" style="--acc:var(--acc-balanced)">
+          <div class="lab-main">
+            <div class="lab-top">
+              <div>
+                <span class="kicker" data-f="kick">SageGrid Balanced &middot; 1 year from $1,000</span>
+                <b class="lab-big" data-f="ret">+947%</b>
+                <span class="lab-sub" data-f="sub">$1,000 became $10,470.01 in the MT5 Strategy Tester</span>
+              </div>
+              <p class="lab-blurb" data-f="blurb">Trades more often and adds a trailing exit that locks in profit. The trade replayed above is one of its grids.</p>
+            </div>
+            <div class="chart lab-chart" data-chart="equity" data-bot="balanced" data-series="balance,low" tabindex="0"
+                 aria-label="SageGrid Balanced: balance and lowest equity each day of the one-year MT5 test, from $1,000 to $10,470.01. Use the arrow keys to move through the days."></div>
+            <ul class="legend">
+              <li><i style="background:var(--acc)"></i>Balance at the end of each day</li>
+              <li><i style="background:var(--loss)"></i>Lowest equity that day, floating P&amp;L included</li>
+            </ul>
+          </div>
+          <div class="lab-tiles">
+            <div class="tile"><span>Last 6 months</span><b class="pos" data-f="six">+161%</b><small>A fresh start with $1,000 on 1 May 2026</small></div>
+            <div class="tile"><span>Worst fall, floating PNL</span><b data-f="dd">32.2%</b>
+              <div class="mini-meter" aria-hidden="true"><i data-f="ddw" style="width:32.22%"></i><em data-f="ksl" style="left:45%"></em></div>
+              <small data-f="ks">Closed trades only 27.2% &middot; kill switch 45%, never hit</small></div>
+            <div class="tile"><span>Profit factor</span><b data-f="pf">1.83</b><small>Gross profit for every dollar of gross loss</small></div>
+            <div class="tile"><span>Trades</span><b data-f="trades">810</b><small data-f="won">66.54% won</small></div>
+            <div class="tile"><span>With 500 ms delay</span><b class="pos" data-f="d500">+986%</b><small>Every order filled slower, same year</small></div>
+            <div class="tile"><span>Biggest floating loss</span><b class="neg" data-f="fl">−10.7%</b><small data-f="flt">Of the balance, on one grid (−$385.77). Stop on each grid: 10%</small></div>
+          </div>
+          <div class="lab-actions">
+            <a class="btn" data-f="wa" href="https://wa.me/27632762725?text=Hi%20TradeSage%2C%20I%27d%20like%20to%20ask%20about%20SageGrid%20Balanced"><span data-f="waname">Ask about Balanced</span>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn btn--ghost" data-f="page" href="backtest/balanced/">Every number</a>
+            <a class="more" data-f="report" href="report/balanced_1y.html" target="_blank" rel="noopener">Open the MT5 report
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 14 14 6M8 6h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ how it trades -->
+  <section class="section" style="padding-top:0" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">02 &mdash; How it trades</span>
+        <h2 id="how-title">Three rules. Every trade.</h2>
+        <p>SageGrid doesn&rsquo;t guess and doesn&rsquo;t panic. All three bots follow the same rules, day and night.</p>
+      </div>
+      <div class="rules">
+        <article class="rule glass spot reveal" style="--d:0">
+          <span class="rule-n" aria-hidden="true">01</span>
+          <div class="viz" aria-hidden="true">
+            <svg viewBox="0 0 300 140" preserveAspectRatio="none">
+              <path class="draw" pathLength="100" d="M10 112 C70 104 120 86 170 68 S260 36 290 28" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+              <polyline class="draw" pathLength="100" points="10,98 34,86 52,94 76,72 98,80 120,58 142,66 166,46 188,54 212,36 236,42 262,22 290,26" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+              <circle class="pop p3" cx="262" cy="22" r="6" fill="var(--gain)"/>
+            </svg>
+          </div>
+          <h3>Trade with the trend</h3>
+          <p>It only buys when gold&rsquo;s daily trend is up and only sells when it is down. When the trend is unclear, it waits.</p>
+        </article>
+        <article class="rule glass spot reveal" style="--d:1">
+          <span class="rule-n" aria-hidden="true">02</span>
+          <div class="viz" aria-hidden="true">
+            <svg viewBox="0 0 300 140" preserveAspectRatio="none">
+              <polyline class="draw" pathLength="100" points="14,24 50,32 78,48 96,42 130,64 160,86 178,82 214,108 246,120 270,114" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+              <circle class="pop p1" cx="50" cy="32" r="5" fill="var(--gold)"/>
+              <circle class="pop p2" cx="178" cy="82" r="8" fill="var(--gold)"/>
+              <circle class="pop p3" cx="270" cy="114" r="11" fill="var(--gold)"/>
+            </svg>
+          </div>
+          <h3>Build a small grid</h3>
+          <p>If price moves against it, it can add up to two more positions, so the whole grid can close in profit on a smaller recovery.</p>
+        </article>
+        <article class="rule glass spot reveal" style="--d:2">
+          <span class="rule-n" aria-hidden="true">03</span>
+          <div class="viz" aria-hidden="true">
+            <svg viewBox="0 0 300 140" preserveAspectRatio="none">
+              <line x1="10" y1="40" x2="290" y2="40" stroke="var(--gain)" stroke-width="2" stroke-dasharray="6 5"/>
+              <line x1="10" y1="118" x2="290" y2="118" stroke="var(--loss)" stroke-width="2" stroke-dasharray="6 5"/>
+              <polyline class="draw" pathLength="100" points="10,96 46,102 82,90 118,98 150,80 182,70 214,62 246,52 272,40" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+              <circle class="pop p3" cx="272" cy="40" r="7" fill="var(--gain)"/>
+            </svg>
+          </div>
+          <h3>Close it all together</h3>
+          <p>Every position closes at once: at the target, on a trailing exit that locks in profit, or at a hard stop of 10–15% of the balance.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ risk -->
+  <section class="section band" id="risk" aria-labelledby="risk-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">03 &mdash; Risk</span>
+        <h2 id="risk-title">Built for the bad days.</h2>
+        <p>Every exit is fixed before the first trade. Each bot has its own kill switch, set above the deepest fall it had in a full year of real ticks, floating P&amp;L included. None was ever hit.</p>
+      </div>
+      <div class="gauges">
+        
+        <figure class="gauge glass spot reveal" style="--acc:var(--acc-disciplined);--d:0">
+          <div class="gauge-dial">
+            <svg viewBox="0 -10 200 134" aria-hidden="true">
+              <path class="track" d="M12,100 A88,88 0 0 1 188,100" fill="none" stroke-width="12" stroke-linecap="round"/>
+              <path class="fill" d="M12,100 A88,88 0 0 1 188,100" fill="none" stroke-width="12" stroke-linecap="round" style="stroke-dasharray:75.61 400"/>
+              <line class="tick" x1="66.86" y1="34.96" x2="53.24" y2="8.23" stroke-width="3" stroke-linecap="round"/>
+              <text class="end" x="12" y="121" text-anchor="middle">0%</text>
+              <text class="end" x="188" y="121" text-anchor="middle">100%</text>
+            </svg>
+            <div class="gauge-val"><b>27.4%</b><span>Worst fall, floating PNL</span></div>
+          </div>
+          <figcaption><strong>Disciplined</strong>Closed trades only 25.6% &middot; biggest floating loss on one grid 12.3%<br>Kill switch at 35% &middot; <em>never hit</em></figcaption>
+        </figure>
+        
+        <figure class="gauge glass spot reveal" style="--acc:var(--acc-balanced);--d:1">
+          <div class="gauge-dial">
+            <svg viewBox="0 -10 200 134" aria-hidden="true">
+              <path class="track" d="M12,100 A88,88 0 0 1 188,100" fill="none" stroke-width="12" stroke-linecap="round"/>
+              <path class="fill" d="M12,100 A88,88 0 0 1 188,100" fill="none" stroke-width="12" stroke-linecap="round" style="stroke-dasharray:89.08 400"/>
+              <line class="tick" x1="88.58" y1="27.9" x2="83.89" y2="-1.73" stroke-width="3" stroke-linecap="round"/>
+              <text class="end" x="12" y="121" text-anchor="middle">0%</text>
+              <text class="end" x="188" y="121" text-anchor="middle">100%</text>
+            </svg>
+            <div class="gauge-val"><b>32.2%</b><span>Worst fall, floating PNL</span></div>
+          </div>
+          <figcaption><strong>Balanced</strong>Closed trades only 27.2% &middot; biggest floating loss on one grid 10.7%<br>Kill switch at 45% &middot; <em>never hit</em></figcaption>
+        </figure>
+        
+        <figure class="gauge glass spot reveal" style="--acc:var(--acc-aggressive);--d:2">
+          <div class="gauge-dial">
+            <svg viewBox="0 -10 200 134" aria-hidden="true">
+              <path class="track" d="M12,100 A88,88 0 0 1 188,100" fill="none" stroke-width="12" stroke-linecap="round"/>
+              <path class="fill" d="M12,100 A88,88 0 0 1 188,100" fill="none" stroke-width="12" stroke-linecap="round" style="stroke-dasharray:124.52 400"/>
+              <line class="tick" x1="100.0" y1="27.0" x2="100.0" y2="-3.0" stroke-width="3" stroke-linecap="round"/>
+              <text class="end" x="12" y="121" text-anchor="middle">0%</text>
+              <text class="end" x="188" y="121" text-anchor="middle">100%</text>
+            </svg>
+            <div class="gauge-val"><b>45.0%</b><span>Worst fall, floating PNL</span></div>
+          </div>
+          <figcaption><strong>Aggressive</strong>Closed trades only 38.7% &middot; biggest floating loss on one grid 15.2%<br>Kill switch at 50% &middot; <em>never hit</em></figcaption>
+        </figure>
+        
+      </div>
+      <div class="limits-row">
+        <div class="limit glass spot reveal" style="--d:0"><b class="grad">10–15%</b><strong>Stop on each grid</strong><p>If one grid&rsquo;s open loss reaches 10% of the balance (15% on Aggressive), every position in it closes.</p></div>
+        <div class="limit glass spot reveal" style="--d:1"><b class="grad">8–12%</b><strong>Daily limits</strong><p>After a loss or a gain of 8% in a day (12% on Aggressive), nothing new starts until tomorrow.</p></div>
+        <div class="limit glass spot reveal" style="--d:2"><b class="grad">&frac12;</b><strong>Smaller after a dip</strong><p>While the account is 10% or more below its high (15% on Aggressive), new grids start at half size.</p></div>
+        <div class="limit glass spot reveal" style="--d:3"><b class="grad">35–50%</b><strong>Kill switch</strong><p>Closes every trade and stops for good: 35% on Disciplined, 45% on Balanced and 50% on Aggressive.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ live account -->
+  <section class="section" id="live" aria-labelledby="live-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="kicker">04 &mdash; Live</span>
+        <h2 id="live-title">Proven on a <span class="grad">live account.</span></h2>
+        <p>Our first-generation system on a STARTRADER cent account, 1&nbsp;May to 30&nbsp;Oct 2026. Message us and we&rsquo;ll open the account on a screen share and show you any trade.</p>
+      </div>
+      <div class="live-panel glass reveal">
+        <div class="live-left">
+          <div>
+            <span class="kicker">Return, cash flows taken out</span>
+            <b class="live-big grad">+127%</b>
+          </div>
+          <div class="kvs">
+            <div class="kv"><span>Opening balance</span><b>$971.47</b></div>
+            <div class="kv"><span>Trading profit</span><b class="pos">+$1,023.40</b></div>
+            <div class="kv"><span>Money in</span><b>+$904.25</b></div>
+            <div class="kv"><span>Money out</span><b>−$1,814.18</b></div>
+            <div class="kv"><span>Closing balance</span><b>$1,084.93</b></div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://wa.me/27632762725?text=Hi%20TradeSage%2C%20I%27d%20like%20to%20see%20the%20live%20account%20on%20a%20screen%20share">See it on a screen share</a>
+            <a class="btn btn--ghost" href="live/">Full statement</a>
+          </div>
+        </div>
+        <div class="live-right">
+          <span class="kicker">Return each month</span>
+          <div class="chart" data-chart="months" data-src="live" style="height:clamp(260px, 28vw, 360px)" aria-label="Live account return each month, May to October 2026, deposits and withdrawals taken out"></div>
+          <p class="small">Deposits and withdrawals taken out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ FAQ -->
+  <section class="section" style="padding-top:0" aria-labelledby="faq-title">
+    <div class="wrap faq-grid">
+      <div class="faq-head reveal">
+        <span class="kicker">05 &mdash; Questions</span>
+        <h2 id="faq-title">Before you ask.</h2>
+        <p>Anything else, ask us on WhatsApp.</p>
+        <a class="btn btn--ghost" href="https://wa.me/27632762725?text=Hi%20TradeSage%2C%20I%20have%20a%20question%20about%20SageGrid">Ask a question</a>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>What is SageGrid?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M3 9h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <div><p>A robot (expert advisor) for MetaTrader&nbsp;5 that trades gold, XAUUSD. It opens small grids in the direction of the daily trend and closes each one as a whole, at a target or at a hard stop. It comes in three versions: Disciplined, Balanced and Aggressive.</p></div>
+        </details>
+        <details>
+          <summary>Which bot should I pick?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M3 9h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <div><p>Disciplined if you want the smallest falls: its worst in the one-year test was 27.4%. Aggressive if you can sit through a fall of 45.0% for the biggest gains. Balanced sits between them, with a worst fall of 32.2%.</p><p>Message us on WhatsApp and we&rsquo;ll help you choose.</p></div>
+        </details>
+        <details>
+          <summary>Do I need to watch it?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M3 9h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <div><p>No. It needs MetaTrader&nbsp;5 running day and night, usually on a VPS, so its stops are always watched. Nobody has to step in.</p></div>
+        </details>
+        <details>
+          <summary>How risky is it?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M3 9h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <div><p>In the one-year test the worst falls, floating P&amp;L included, were 27.4% for Disciplined, 32.2% for Balanced and 45.0% for Aggressive. The biggest floating loss on a single grid was 12.3% of the balance for Disciplined, 10.7% of the balance for Balanced and 15.2% of the balance for Aggressive.</p><p>Every grid has a hard stop, every day a loss limit, and every account a kill switch. Trading gold can lose money, and future results can be worse than the test.</p></div>
+        </details>
+        <details>
+          <summary>How realistic are the backtests?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M3 9h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <div><p>They ran in the MetaTrader&nbsp;5 Strategy Tester on 87,821,455 real ticks from STARTRADER, with the broker&rsquo;s real spread and a 150&nbsp;ms delay on every order. With a slower 500 ms delay the three bots ended the year at $3,731, $10,863 and $20,222.</p></div>
+        </details>
+        <details>
+          <summary>Which broker and account does it need?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M3 9h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <div><p>It was built and tested on STARTRADER&rsquo;s gold symbol, XAUUSD.c. Its lot sizes are set for cent accounts, like the live account we trade.</p></div>
+        </details>
+        <details>
+          <summary>Can I see live results?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M3 9h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <div><p>Yes. Message us on WhatsApp and we&rsquo;ll open the live account in MetaTrader&nbsp;5 on a screen share, so you can see the six months on this site trade by trade.</p></div>
+        </details>
+        <details>
+          <summary>How do I get access?<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M3 9h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <div><p>Send a WhatsApp message to +27 63 276 2725. We&rsquo;ll answer your questions there.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta glow-border reveal">
+      <span class="kicker">Private access</span>
+      <h2 id="cta-title">Let the robot take the <span class="grad">night shift.</span></h2>
+      <p>We share SageGrid with a small circle. Message us on WhatsApp: we answer your questions, help you pick a bot and show you the live account on a screen share.</p>
+      <a class="btn" href="https://wa.me/27632762725?text=Hi%20TradeSage%2C%20I%27d%20like%20access%20to%20SageGrid">
+        Message us on WhatsApp
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <span class="phone">+27 63 276 2725</span>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="wordmark" href="./" aria-label="TradeSage home">
+          <span class="mark"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 5h12M3 9h8M3 13h4" stroke="#120A00" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          TradeSage
+        </a>
+        <p>SageGrid trades gold on MetaTrader 5 with a fixed exit on every trade, in three versions: Disciplined, Balanced and Aggressive. Backtest results come from the MetaTrader 5 Strategy Tester; past results don&rsquo;t guarantee future returns.</p>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="backtest/">Backtests</a>
+        <a href="backtest/disciplined/">Disciplined</a>
+        <a href="backtest/balanced/">Balanced</a>
+        <a href="backtest/aggressive/">Aggressive</a>
+        <a href="live/">Live account</a>
+        <a href="how/">How it works</a>
+        <a href="https://wa.me/27632762725">WhatsApp +27 63 276 2725</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 TradeSage</span>
+      <span>XAUUSD.c &middot; MetaTrader 5 &middot; STARTRADER</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/data.js"></script>
+<script src="assets/site.js"></script>
+
+</body>
+</html>

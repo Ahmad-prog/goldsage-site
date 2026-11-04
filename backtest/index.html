@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>SageGrid backtests</title>
+<meta name="description" content="SageGrid Disciplined, Balanced and Aggressive side by side: one-year and six-month MetaTrader 5 Strategy Tester runs on real ticks, every result from the MT5 reports.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#04050B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23FFE7A1'/%3E%3Cstop offset='.4' stop-color='%23FFC83D'/%3E%3Cstop offset='1' stop-color='%23FF8A3D'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M8 11h16M8 16h11M8 21h6' stroke='%23120A00' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&family=Unbounded:wght@500..800&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="fx" aria-hidden="true"><div class="fx-aurora"><i></i><i></i><i></i></div><div class="fx-grid"></div></div>
+<header class="site-head">
+  <div class="bar">
+    <a class="wordmark" href="../" aria-label="TradeSage home">
+      <span class="mark"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 5h12M3 9h8M3 13h4" stroke="#120A00" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+      TradeSage
+    </a>
+    <nav class="nav" id="nav" aria-label="Pages">
+      <a href="../#bots">Bots</a>
+      <a href="../backtest/" aria-current="page">Backtests</a>
+      <a href="../live/" >Live account</a>
+      <a href="../how/" >How it works</a>
+    </nav>
+    <a class="btn btn--small" href="https://wa.me/27632762725?text=Hi%20TradeSage%2C%20I%27d%20like%20access%20to%20SageGrid">Get access</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-head" aria-labelledby="page-title">
+    <div class="wrap grid">
+      <div class="stack">
+        <nav class="botnav" aria-label="Bots">
+  <a href="../backtest/" aria-current="page">Compare</a>
+  <a style="--acc:var(--acc-disciplined)" href="../backtest/disciplined/"><span class="lvl" data-level="1" aria-hidden="true"><i></i><i></i><i></i></span>Disciplined</a><a style="--acc:var(--acc-balanced)" href="../backtest/balanced/"><span class="lvl" data-level="2" aria-hidden="true"><i></i><i></i><i></i></span>Balanced</a><a style="--acc:var(--acc-aggressive)" href="../backtest/aggressive/"><span class="lvl" data-level="3" aria-hidden="true"><i></i><i></i><i></i></span>Aggressive</a>
+</nav>
+
+        <h1 id="page-title">Three bots, one year of real ticks</h1>
+      </div>
+      <p class="lead">Each bot started with $1,000 on 31 Oct 2025 in the MetaTrader&nbsp;5 Strategy Tester, on the same ticks with the same costs. Here is how they compare.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="compare-title">
+    <div class="wrap">
+      <h2 id="compare-title" class="sr-only">The three bots compared</h2>
+      <div class="table-scroll">
+        <table class="table compare">
+          <thead>
+            <tr>
+              <td></td>
+              <th scope="col" class="r" style="--acc:var(--acc-disciplined)"><a href="../backtest/disciplined/" style="color:var(--acc)">Disciplined</a><span class="lvl" data-level="1" role="img" aria-label="Risk 1 of 3"><i></i><i></i><i></i></span></th><th scope="col" class="r" style="--acc:var(--acc-balanced)"><a href="../backtest/balanced/" style="color:var(--acc)">Balanced</a><span class="lvl" data-level="2" role="img" aria-label="Risk 2 of 3"><i></i><i></i><i></i></span></th><th scope="col" class="r" style="--acc:var(--acc-aggressive)"><a href="../backtest/aggressive/" style="color:var(--acc)">Aggressive</a><span class="lvl" data-level="3" role="img" aria-label="Risk 3 of 3"><i></i><i></i><i></i></span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="group"><th scope="rowgroup" colspan="4">One year, 31 Oct 2025 to 30 Oct 2026</th></tr>
+            <tr><th scope="row">Final balance</th><td class="r">$4,724.11</td><td class="r">$10,470.01</td><td class="r">$22,814.82</td></tr>
+            <tr><th scope="row">Return on $1,000</th><td class="r pos">+372%</td><td class="r pos">+947%</td><td class="r pos">+2,181%</td></tr>
+            <tr><th scope="row">Profit factor</th><td class="r">1.52</td><td class="r">1.83</td><td class="r">1.70</td></tr>
+            <tr><th scope="row">Worst fall, floating P&amp;L included</th><td class="r neg">27.35%</td><td class="r neg">32.22%</td><td class="r neg">45.04%</td></tr>
+            <tr><th scope="row">Biggest floating loss on one grid</th><td class="r">−12.30%</td><td class="r">−10.69%</td><td class="r">−15.25%</td></tr>
+            <tr><th scope="row">Worst fall, closed trades only</th><td class="r">25.56%</td><td class="r">27.18%</td><td class="r">38.68%</td></tr>
+            <tr><th scope="row">Worst day</th><td class="r">−11.22%</td><td class="r">−10.63%</td><td class="r">−15.11%</td></tr>
+            <tr><th scope="row">Losing months</th><td class="r">2 of 12</td><td class="r">2 of 12</td><td class="r">3 of 12</td></tr>
+            <tr><th scope="row">Trades</th><td class="r">610</td><td class="r">810</td><td class="r">811</td></tr>
+            <tr><th scope="row">Winning trades</th><td class="r">58.52%</td><td class="r">66.54%</td><td class="r">66.46%</td></tr>
+            <tr><th scope="row">Margin stop-outs</th><td class="r">0</td><td class="r">0</td><td class="r">0</td></tr>
+            <tr><th scope="row">Kill switch triggered</th><td class="r">Never</td><td class="r">Never</td><td class="r">Never</td></tr>
+            <tr><th scope="row">With a 500 ms order delay</th><td class="r">+273%</td><td class="r">+986%</td><td class="r">+1,922%</td></tr>
+          </tbody>
+          <tbody>
+            <tr class="group"><th scope="rowgroup" colspan="4">Last six months, a fresh start with $1,000 on 1 May 2026</th></tr>
+            <tr><th scope="row">Final balance</th><td class="r">$2,450.25</td><td class="r">$2,605.68</td><td class="r">$3,984.53</td></tr>
+            <tr><th scope="row">Return on $1,000</th><td class="r pos">+145%</td><td class="r pos">+161%</td><td class="r pos">+298%</td></tr>
+            <tr><th scope="row">Worst fall, floating P&amp;L included</th><td class="r neg">19.70%</td><td class="r neg">32.09%</td><td class="r neg">45.02%</td></tr>
+            <tr><th scope="row">Kill switch triggered</th><td class="r">Never</td><td class="r">Never</td><td class="r">Never</td></tr>
+            <tr><th scope="row">With a 500 ms order delay</th><td class="r">+107%</td><td class="r">+170%</td><td class="r">+327%</td></tr>
+          </tbody>
+          <tbody>
+            <tr class="group"><th scope="rowgroup" colspan="4">Settings</th></tr>
+            <tr><th scope="row">Position size</th><td class="r">1&times;</td><td class="r">1&times;</td><td class="r">1.5&times;</td></tr>
+            <tr><th scope="row">Trailing exit</th><td class="r">No</td><td class="r">Yes</td><td class="r">Yes</td></tr>
+            <tr><th scope="row">Stop on each grid</th><td class="r">10%</td><td class="r">10%</td><td class="r">15%</td></tr>
+            <tr><th scope="row">Daily loss limit and profit lock</th><td class="r">8%</td><td class="r">8%</td><td class="r">12%</td></tr>
+            <tr><th scope="row">Half size after a fall of</th><td class="r">10%</td><td class="r">10%</td><td class="r">15%</td></tr>
+            <tr><th scope="row">Kill switch</th><td class="r">35%</td><td class="r">45%</td><td class="r">50%</td></tr>
+          </tbody>
+          <tbody>
+            <tr class="group"><th scope="rowgroup" colspan="4">MT5 reports</th></tr>
+            <tr><th scope="row">One year</th><td class="r"><a href="../report/disciplined_1y.html" target="_blank" rel="noopener">Report</a></td><td class="r"><a href="../report/balanced_1y.html" target="_blank" rel="noopener">Report</a></td><td class="r"><a href="../report/aggressive_1y.html" target="_blank" rel="noopener">Report</a></td></tr>
+            <tr><th scope="row">Six months</th><td class="r"><a href="../report/disciplined_6m.html" target="_blank" rel="noopener">Report</a></td><td class="r"><a href="../report/balanced_6m.html" target="_blank" rel="noopener">Report</a></td><td class="r"><a href="../report/aggressive_6m.html" target="_blank" rel="noopener">Report</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small" style="margin-top:18px">Floating loss is measured against the balance when that grid started, worst days against the balance at the start of the day. The floating loss and the kill switch are read from each bot&rsquo;s own log of the same run. Run on 4 Nov 2026 with the broker&rsquo;s overnight swap rates of that day.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="setup-title">
+    <div class="wrap split">
+      <div class="side stack">
+        <h2 id="setup-title">How they were tested</h2>
+        <p>The same conditions for all three, printed at the top of each MT5 report, so anyone with MetaTrader&nbsp;5 can see exactly what ran.</p>
+      </div>
+      <dl class="facts main">
+        <dt>Tester</dt><dd>MetaTrader 5 Strategy Tester, every tick based on real ticks</dd>
+        <dt>Broker server</dt><dd>STARTRADERFinancial-Live (Build 6230)</dd>
+        <dt>Symbol</dt><dd>XAUUSD.c (gold) on the 1-minute chart</dd>
+        <dt>Period</dt><dd>31 Oct 2025 to 31 Oct 2026, and separately 1 May to 31 Oct 2026</dd>
+        <dt>Price data</dt><dd>87,821,455 ticks for the year, 100% real ticks</dd>
+        <dt>Spread</dt><dd>The broker&rsquo;s own, as recorded on every tick</dd>
+        <dt>Order delay</dt><dd>150&nbsp;ms on every order, and again at 500&nbsp;ms</dd>
+        <dt>Starting balance</dt><dd>$1,000, leverage 1:500</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section band" aria-labelledby="pick-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="pick-title">Every number, bot by bot</h2>
+        <p>Each bot&rsquo;s page has its balance chart, the full results from its MT5 report and its month-by-month returns.</p>
+      </div>
+      <div class="pick">
+        
+        <a class="pick-card" href="../backtest/disciplined/" style="--acc:var(--acc-disciplined)">
+          <span class="lvl" data-level="1" aria-hidden="true"><i></i><i></i><i></i></span>
+          <b>Disciplined</b>
+          <span>+372% in a year &middot; worst fall 27.4%</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        
+        <a class="pick-card" href="../backtest/balanced/" style="--acc:var(--acc-balanced)">
+          <span class="lvl" data-level="2" aria-hidden="true"><i></i><i></i><i></i></span>
+          <b>Balanced</b>
+          <span>+947% in a year &middot; worst fall 32.2%</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        
+        <a class="pick-card" href="../backtest/aggressive/" style="--acc:var(--acc-aggressive)">
+          <span class="lvl" data-level="3" aria-hidden="true"><i></i><i></i><i></i></span>
+          <b>Aggressive</b>
+          <span>+2,181% in a year &middot; worst fall 45.0%</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta glow-border reveal">
+      <span class="kicker">Private access</span>
+      <h2 id="cta-title">Let the robot take the <span class="grad">night shift.</span></h2>
+      <p>We share SageGrid with a small circle. Message us on WhatsApp: we answer your questions, help you pick a bot and show you the live account on a screen share.</p>
+      <a class="btn" href="https://wa.me/27632762725?text=Hi%20TradeSage%2C%20I%27d%20like%20access%20to%20SageGrid">
+        Message us on WhatsApp
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <span class="phone">+27 63 276 2725</span>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="wordmark" href="../" aria-label="TradeSage home">
+          <span class="mark"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 5h12M3 9h8M3 13h4" stroke="#120A00" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          TradeSage
+        </a>
+        <p>SageGrid trades gold on MetaTrader 5 with a fixed exit on every trade, in three versions: Disciplined, Balanced and Aggressive. Backtest results come from the MetaTrader 5 Strategy Tester; past results don&rsquo;t guarantee future returns.</p>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="../backtest/">Backtests</a>
+        <a href="../backtest/disciplined/">Disciplined</a>
+        <a href="../backtest/balanced/">Balanced</a>
+        <a href="../backtest/aggressive/">Aggressive</a>
+        <a href="../live/">Live account</a>
+        <a href="../how/">How it works</a>
+        <a href="https://wa.me/27632762725">WhatsApp +27 63 276 2725</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 TradeSage</span>
+      <span>XAUUSD.c &middot; MetaTrader 5 &middot; STARTRADER</span>
+    </div>
+  </div>
+</footer>
+<script src="../assets/data.js"></script>
+<script src="../assets/site.js"></script>
+
+</body>
+</html>
