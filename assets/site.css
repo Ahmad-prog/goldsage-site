@@ -264,7 +264,7 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
 
 /* ---------------------------------------------------------------- hero */
 
-.hero { padding-top: clamp(44px, 5.5vw, 80px); padding-bottom: clamp(40px, 5vw, 72px); text-align: center; position: relative; }
+.hero { padding-top: 20px; padding-bottom: clamp(40px, 5vw, 72px); text-align: center; position: relative; }
 .hero h1 { max-width: 14.5ch; margin-inline: auto; }
 .hero .lead { margin: 26px auto 0; }
 .hero .actions { justify-content: center; margin-top: 36px; }
@@ -794,7 +794,7 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
 .hero-wrap { position: relative; }
 .stamp {
   --ink-red: #FF4733;
-  position: absolute; right: var(--gutter); top: -28px; z-index: 2;
+  position: absolute; right: var(--gutter); top: 0; z-index: 2;
   width: max-content; padding: 13px 14px 12px;
   display: grid; justify-items: center; gap: 3px; text-align: center;
   color: var(--ink-red);
@@ -826,7 +826,10 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
 /* narrower screens: a smaller stamp; below 960px the headline needs the width, so it sits above it, right-aligned */
 @media (max-width: 1199px) { .stamp { zoom: 0.84; } }
 @media (max-width: 959px) {
-  .stamp { position: relative; right: auto; top: auto; margin: -24px 0 22px auto; zoom: 0.78; }
+  /* phones: the stamp goes under the WhatsApp number, so nothing sits between the menu and the headline */
+  .hero-wrap { display: flex; flex-direction: column; align-items: center; }
+  .hero-wrap > .stamp { order: 1; position: relative; right: auto; top: auto; margin: 26px auto 0; zoom: 0.78; }
+  .hero-wrap > .stage { order: 2; align-self: stretch; }
 }
 
 /* ---------------------------------------------------------------- the gold lion behind the hero text */
