@@ -826,5 +826,33 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
 /* narrower screens: a smaller stamp; below 960px the headline needs the width, so it sits above it, right-aligned */
 @media (max-width: 1199px) { .stamp { zoom: 0.84; } }
 @media (max-width: 959px) {
-  .stamp { position: relative; right: auto; top: auto; margin: -24px 0 22px auto; zoom: 0.78; }
+  .stamp { position: absolute; right: 0; top: -132px; margin: 0; zoom: 0.62; }   /* on the mane, clear of the lion's face */
 }
+
+/* ---------------------------------------------------------------- the gold lion behind the hero text */
+
+.hero-wrap { isolation: isolate; }
+.hero-lion {
+  position: absolute; z-index: -1; left: 50%; top: -400px;
+  width: min(820px, 150vw); height: auto;
+  transform: translateX(-50%);
+  opacity: 0.5;
+  pointer-events: none;
+  filter: drop-shadow(0 0 6px rgba(255, 176, 46, 0.45));
+  -webkit-mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
+}
+/* a soft dark halo keeps the text crisp over the gold lines */
+.hero h1, .hero .lead, .hero .phone { text-shadow: 0 2px 18px rgba(4, 5, 11, 0.95), 0 0 42px rgba(4, 5, 11, 0.8); }
+.hero h1 .grad { text-shadow: none; }                         /* gradient text cannot carry a shadow */
+.hero { padding-top: clamp(150px, 19vw, 280px); }             /* room for the lion's head above the headline */
+.hero-lion path { stroke-dasharray: 1; stroke-dashoffset: 0; }
+@media (max-width: 720px) { .hero-lion { top: -218px; width: 128vw; opacity: 0.4; } }
+
+/* the lion traces itself in gold: the face first, then the mane flares out */
+@media (prefers-reduced-motion: no-preference) {
+  .js .hero-lion path { stroke-dashoffset: 1; animation: trace 1400ms cubic-bezier(0.45, 0, 0.2, 1) forwards; animation-delay: calc(var(--i) * 13ms + 250ms); }
+  .js .hero-lion g { animation: lion-breathe 7s ease-in-out 3.6s infinite; transform-origin: 50% 50%; }
+}
+@keyframes trace { to { stroke-dashoffset: 0; } }
+@keyframes lion-breathe { 0%, 100% { opacity: 1; } 50% { opacity: 0.72; } }
