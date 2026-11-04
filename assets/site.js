@@ -421,11 +421,9 @@
       f.ddw.style.width = `${b.eq_dd_pct}%`;
       f.ksl.style.left = `${ks}%`;
       f.ks.textContent = `Closed trades only ${pct(b.bal_dd_pct, 1)} · kill switch ${nf(ks)}%, ${b.cap_hit ? "hit" : "never hit"}`;
-      f.bs.textContent = `${b.below_start_n} ${b.below_start_n === 1 ? "time" : "times"}`;
-      f.bst.textContent = b.below_start_n ? `Equity with floating PNL, in 1 year. Last on ${b.below_start_last}, lowest ${money(b.below_start_low, 2)}. Closed balance: never`
-        : "Equity with floating PNL never went below it in 1 year";
+      f.pf.textContent = nf(b.profit_factor, 2);
       f.gw.textContent = pct(b.grid_win_pct, 1);
-      f.gwt.textContent = `Accuracy: ${nf(b.grids_won)} of ${nf(b.grids)} grids · profit factor ${nf(b.profit_factor, 2)}`;
+      f.gwt.textContent = `Accuracy: ${nf(b.grids_won)} of ${nf(b.grids)} grids`;
       f.wm.textContent = `${b.win_months} of ${b.months_n}`;
       f.wmt.textContent = `In the 1-year test. Worst month ${pct(b.worst_month_pct, 1)}`;
       f.avgm.textContent = spct(b.avg_win_month_pct, 1);
