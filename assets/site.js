@@ -421,9 +421,9 @@
       f.ddw.style.width = `${b.eq_dd_pct}%`;
       f.ksl.style.left = `${ks}%`;
       f.ks.textContent = `Closed trades only ${pct(b.bal_dd_pct, 1)} · kill switch ${nf(ks)}%, ${b.cap_hit ? "hit" : "never hit"}`;
-      f.fl.textContent = pct(-b.float_pct, 1);
-      f.bw.textContent = spct(b.best_grid_pct, 1);
-      f.flt.innerHTML = `Of the balance, on one grid (<span class="nw">${smoney(b.best_grid_usd, 2)}</span> and <span class="nw">${money(b.float_usd, 2)}</span>). Stop on each grid: ${nf(b.inputs.InpBasketStopPct)}%`;
+      f.bs.textContent = `${b.below_start_n} ${b.below_start_n === 1 ? "time" : "times"}`;
+      f.bst.textContent = b.below_start_n ? `Equity with floating PNL, in 1 year. Last on ${b.below_start_last}, lowest ${money(b.below_start_low, 2)}. Closed balance: never`
+        : "Equity with floating PNL never went below it in 1 year";
       f.gw.textContent = pct(b.grid_win_pct, 1);
       f.gwt.textContent = `Accuracy: ${nf(b.grids_won)} of ${nf(b.grids)} grids · profit factor ${nf(b.profit_factor, 2)}`;
       f.wm.textContent = `${b.win_months} of ${b.months_n}`;
