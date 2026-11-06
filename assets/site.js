@@ -399,7 +399,9 @@
     const panel = box.querySelector(".lab-panel");
     const chart = panel.querySelector('.chart[data-chart="equity"]');
     const f = Object.fromEntries([...panel.querySelectorAll("[data-f]")].map((n) => [n.dataset.f, n]));
-    const WA = "https://wa.me/27632762725?text=";
+    const warn = box.querySelector(".lab-warn");
+    const w = warn ? Object.fromEntries([...warn.querySelectorAll("[data-w]")].map((n) => [n.dataset.w, n])) : null;
+    const WA ="https://wa.me/27632762725?text=";
 
     function select(tab, focus) {
       const key = tab.dataset.bot, b = TS.bots[key];
@@ -421,6 +423,12 @@
       f.ddw.style.width = `${b.eq_dd_pct}%`;
       f.ksl.style.left = `${ks}%`;
       f.ks.textContent = `Closed trades only ${pct(b.bal_dd_pct, 1)} · kill switch ${nf(ks)}%, ${b.cap_hit ? "hit" : "never hit"}`;
+      if (w) {
+        w.name.textContent = b.name;
+        w.ks.textContent = `${nf(ks)}%`;
+        w.ks2.textContent = `${nf(ks)}%`;
+        warn.classList.remove("swap"); void warn.offsetWidth; warn.classList.add("swap");
+      }
       f.pf.textContent = nf(b.profit_factor, 2);
       f.gw.textContent = pct(b.grid_win_pct, 1);
       f.gwt.textContent = `Accuracy: ${nf(b.grids_won)} of ${nf(b.grids)} grids`;

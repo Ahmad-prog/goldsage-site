@@ -457,6 +457,11 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
 .mini-meter em { position: absolute; top: -5px; bottom: -5px; width: 2px; margin-left: -1px; border-radius: 2px; background: var(--loss); box-shadow: 0 0 8px var(--loss); transition: left 700ms var(--ease-expo); }
 .lab-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; padding: 20px clamp(24px, 3vw, 40px); border-top: 1px solid var(--line); background: rgba(255, 255, 255, 0.015); border-radius: 0 0 28px 28px; }
 .lab-actions .more { margin-left: auto; }
+/* risk warning under the section intro, above the tabs; the % is the selected bot's kill switch (site.js swaps it) */
+.lab-warn { display: flex; gap: 12px; align-items: flex-start; max-width: none; margin: 0 0 14px; padding: 14px 18px; border: 1px solid color-mix(in srgb, var(--loss) 45%, transparent); border-radius: 16px; background: color-mix(in srgb, var(--loss) 8%, transparent); color: var(--ink-soft); font-size: 0.875rem; line-height: 1.55; }
+.lab-warn svg { flex: none; width: 20px; height: 20px; margin-top: 1px; color: var(--loss); }
+.lab-warn b { color: var(--ink); font-weight: 600; }
+.lab-warn .lab-warn-pct { color: var(--loss); font-variant-numeric: tabular-nums; }
 
 @media (max-width: 1000px) {
   .lab-panel { grid-template-columns: 1fr; }
@@ -481,6 +486,7 @@ h3 { font-size: var(--step-h3); line-height: 1.25; letter-spacing: -0.02em; font
   .lab-panel.swap .tile:nth-child(4) [data-f] { animation-delay: 150ms; }
   .lab-panel.swap .tile:nth-child(5) [data-f] { animation-delay: 200ms; }
   .lab-panel.swap .tile:nth-child(6) [data-f] { animation-delay: 250ms; }
+  .lab-warn.swap [data-w] { animation: swapin 560ms var(--ease-expo) both; }
 }
 @keyframes swapin { from { opacity: 0; transform: translateY(8px); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
 
